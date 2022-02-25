@@ -5,7 +5,7 @@ export default function Textform(props) {
     // console.log("upper case is clicked"+ text);
     let newText = text.toUpperCase();
     setText(newText);
-    props.showAlert("converted to upper case","sucess");
+    props.showAlert("converted to upper case","Sucess");
   };
   const handlelowClick = () => {
     // console.log("upper case is clicked"+ text);
@@ -52,24 +52,24 @@ export default function Textform(props) {
               onChange={handleOnChange}
               id="myBox"
               rows="8"
-              style={{backgroundColor:props.mode==='dark'?'#461a95':'white',color:props.mode==='dark'?'white':'black'}}
+              style={{backgroundColor:props.mode==='dark'?'rgb(62 58 126)':'white',color:props.mode==='dark'?'white':'black'}}
             ></textarea>
-            <button className="btn btn-primary my-2 " onClick={handleUpClick}>
+            <button disabled={text.length===0} className="btn btn-primary my-2 " onClick={handleUpClick}>
               Convert to Upper
             </button>
-            <button className="btn btn-primary my-2 mx-2 " onClick={handlelowClick}>
+            <button disabled={text.length===0} className="btn btn-primary my-2 mx-1 " onClick={handlelowClick}>
               Convert to Lower
             </button>
-            <button className="btn btn-primary my-2 mx-2 " onClick={handleClear}>
+            <button disabled={text.length===0} className="btn btn-primary my-2 mx-1 " onClick={handleClear}>
               Clear
             </button>
-            <button className="btn btn-primary my-2 mx-2 " onClick={handleCopy}>
+            <button disabled={text.length===0} className="btn btn-primary my-2 mx-1" onClick={handleCopy}>
               Copy Text
             </button>
-            <button className="btn btn-primary my-2 mx-2 " onClick={handleRemoveSpaces}>
+            <button disabled={text.length===0} className="btn btn-primary my-2 mx-1 " onClick={handleRemoveSpaces}>
             Remove Spaces
           </button>
-          <button className="btn btn-primary my-2 mx-2 " onClick={handleRemoveSpaces}>
+          <button disabled={text.length===0} className="btn btn-primary my-2 mx-1 " onClick={handleRemoveSpaces}>
             Remove Spaces
           </button>
           </div>
@@ -78,9 +78,9 @@ export default function Textform(props) {
           <h2>Your text Summary</h2>
           <p>
           
-            {text.split(" ").length-1} Words And {text.length} characters
+            {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words And {text.length} characters
           </p>
-          <p> {Math.round(0.05*text.split(" ").length,2)} Minutes to Read</p>
+          <p> {Math.round(0.005*text.split(" ").length,2)} Minutes to Read</p>
           <h3>preview</h3>
           <p>{text.length>0?text:'Write Something to Preview'}</p>
         </div>

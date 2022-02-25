@@ -31,49 +31,73 @@ function App() {
   };
   return (
     <>
-      
-        {/*  <Navbar
-            title="TextEditor"
-            about="About us"
-            mode={mode}
-            togglemode={togglemode}
-          />
-          <Alert alert={alert} />
-          <div className="container my-3"></div>
-          <Textform
-            showAlert={showAlert}
-            heading="Enter your Text for Edit"
-            mode={mode}
-          />
-          
-      <About />
-        */}
-        <BrowserRouter>
+
+     {/* <Navbar
+        title="TextEditor"
+        about="About us"
+        mode={mode}
+        togglemode={togglemode}
+      />
+      <Alert alert={alert} />
+      <div className="container my-3"></div>
+      <Textform
+        showAlert={showAlert}
+        heading="Enter your Text for Edit"
+        mode={mode}
+      />
+
+  <About />*/}
+
+      {/* <BrowserRouter>
         <div>
-          <h1>Hello, React Router!</h1>
+          
+          
+            
           <Routes>
           
+            
             <Route path="/" element={<Navbar
               title="TextEditor"
               about="About us"
               mode={mode}
               togglemode={togglemode}
             />} />
-            <Route path="alert" element={<Alert alert={alert} />} />
-
-            <Route path="textform" element={<Textform
+            <Route path="/" element={<Textform
               showAlert={showAlert}
               heading="Enter your Text for Edit"
               mode={mode}
             />} />
-            <Route path="about" element={<About />} />
+
+            <Route path="/About" element={<About />} />
+            <Route path="/" element={<Alert alert={alert} />} />
             
+            
+          </Routes>
+        </div>
+            </BrowserRouter>*/}
+      <BrowserRouter>
+        <div>
+        <Navbar
+        title="TextEditor"
+        about="About us"
+        mode={mode}
+        togglemode={togglemode}
+      />
+      <Alert alert={alert} />
+      <div className="container my-3"></div>
+          <Routes>
+            <Route path="/" element={<Textform
+              showAlert={showAlert}
+              heading="Enter your Text for Edit"
+              mode={mode}
+            />} />
+            <Route path="/about" element={<About mode={mode} />} />
           </Routes>
         </div>
       </BrowserRouter>
 
 
-     </> 
+    </>
   );
 }
 
