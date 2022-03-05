@@ -75,6 +75,7 @@ function App() {
           </Routes>
         </div>
             </BrowserRouter>*/}
+            
       <BrowserRouter>
         <div>
         <Navbar
@@ -84,6 +85,7 @@ function App() {
         togglemode={togglemode}
       />
       <Alert alert={alert} />
+    
       <div className="container my-3"></div>
           <Routes>
             <Route path="/" element={<Textform

@@ -5,33 +5,33 @@ export default function Textform(props) {
     // console.log("upper case is clicked"+ text);
     let newText = text.toUpperCase();
     setText(newText);
-    props.showAlert("converted to upper case","Sucess");
+    props.showAlert("converted to upper case","success");
   };
   const handlelowClick = () => {
     // console.log("upper case is clicked"+ text);
     let newText = text.toLowerCase();
     setText(newText);
-    props.showAlert("converted to lower case","Sucess");
+    props.showAlert("converted to lower case","success");
   };
   const handleClear = () => {
     // console.log("upper case is clicked"+ text);
     let newText = "";
     setText(newText);
-    props.showAlert("Text is Cleared","Sucess");
+    props.showAlert("Text is Cleared","success");
   };
   const handleCopy = () => {
     // console.log("upper case is clicked"+ text);
     let newText = document.getElementById('myBox');
     newText.select();
     navigator.clipboard.writeText(newText.value)
-    props.showAlert("Text is Copied","Sucess");
+    props.showAlert("Text is Copied","success");
     
   };
   const handleRemoveSpaces= () => {
     // console.log("upper case is clicked"+ text);
     let newText = text.split(/[ ] +/);
     setText(newText.join(' '));
-    props.showAlert("Space is Removed","Sucess");
+    props.showAlert("Space is Removed","success");
     
   };
 
@@ -84,7 +84,7 @@ export default function Textform(props) {
           
             {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words And {text.length} characters
           </p>
-          <p> {Math.round(0.005*text.split(" ").length,2)} Minutes to Read</p>
+          <p> {Math.round(0.008*text.split(" ").length,2)} Minutes to Read</p>
           <h3>preview</h3>
           <p>{text.length>0?text:'Write Something to Preview'}</p>
         </div>
